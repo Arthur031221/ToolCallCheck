@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toolcall Check</title>
+<style>
+*{box-sizing:border-box}
+html,body{width:1200px}
+html,body{height:675px}
+html,body{margin:0}
+html,body{background:#edf3f8}
+html,body{color:#17324d}
+html,body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+.sheet{height:100%}
+.sheet{padding:48px 60px 42px}
+.sheet{display:flex}
+.sheet{flex-direction:column}
+.head{height:62px}
+.head{display:flex}
+.head{align-items:center}
+.head{gap:14px}
+.mark{width:46px}
+.mark{height:46px}
+.brand{font-weight:700}
+.brand{font-size:20px}
+.brand{letter-spacing:-.02em}
+.edition{margin-left:auto}
+.edition{font:12px ui-monospace,SFMono-Regular,Consolas,monospace}
+.edition{color:#536578}
+.main{display:grid}
+.main{grid-template-columns:1.08fr .92fr}
+.main{gap:48px}
+.main{align-items:center}
+.main{flex:1}
+.copy h1{font-size:54px}
+.copy h1{line-height:1.04}
+.copy h1{letter-spacing:-.045em}
+.copy h1{font-weight:600}
+.copy h1{max-width:600px}
+.copy h1{margin:0 0 22px}
+.copy p{font-size:19px}
+.copy p{line-height:1.5}
+.copy p{color:#536578}
+.copy p{max-width:530px}
+.copy p{margin:0}
+.command{margin-top:30px}
+.command{border-left:4px solid #254e73}
+.command{padding:13px 16px}
+.command{background:#dfe9f1}
+.command{color:#17324d}
+.command{font:14px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace}
+.matrix{background:white}
+.matrix{border:1px solid #c8d5e0}
+.matrix-head{display:flex}
+.matrix-head{justify-content:space-between}
+.matrix-head{padding:15px 18px}
+.matrix-head{background:#dfe9f1}
+.matrix-head{border-bottom:1px solid #c8d5e0}
+.matrix-head{font-size:14px}
+.matrix-head{font-weight:650}
+.row{display:grid}
+.row{grid-template-columns:1fr auto}
+.row{gap:10px}
+.row{align-items:center}
+.row{padding:13px 18px}
+.row{border-bottom:1px solid #c8d5e0}
+.row{font-size:14px}
+.row:last-child{border-bottom:0}
+.ok{font:700 12px ui-monospace,SFMono-Regular,Consolas,monospace}
+.ok{color:#177448}
+.trace{font:12px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace}
+.trace{color:#536578}
+.trace{padding:8px 18px}
+.foot{border-top:1px solid #aebdcc}
+.foot{padding-top:13px}
+.foot{color:#536578}
+.foot{font-size:12px}
+.foot{display:flex}
+.foot{justify-content:space-between}
+</style>
+</head>
+<body><main class="sheet">
+<header class="head"><svg class="mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect x="4" y="4" width="56" height="56" rx="4" fill="#17324d"/><path d="M16 18h32v7H16zm0 14h20v7H16z" fill="#fff"/><circle cx="44" cy="36" r="4" fill="#ffffff"/></svg><div class="brand">toolcall-check</div><div class="edition">A local endpoint worksheet</div></header>
+<section class="main"><div class="copy"><h1>Can the tool call make the return trip?</h1><p>Check nested argument types, streamed fragments, and a fixed tool result followed by a normal answer.</p><div class="command">$ toolcall-check --demo<br>Checks: 5 probes / private HTML report</div></div>
+<div class="matrix"><div class="matrix-head"><span>Probe worksheet</span><span>5 checks</span></div><div class="row"><span>Forced echo call</span><span class="ok">PASS</span></div><div class="row"><span>Forced nested JSON call</span><span class="ok">PASS</span></div><div class="row"><span>Streaming echo</span><span class="ok">PASS</span></div><div class="row"><span>Streaming nested JSON</span><span class="ok">PASS</span></div><div class="row"><span>Two turn echo round trip</span><span class="ok">PASS</span></div><div class="trace">Expected values beside received arguments<br>Authorization omitted from saved trace</div></div></section>
+<footer class="foot"><span>Python / standard library runtime / synthetic demo kept explicit</span><span>Exact JSON values / bounded HTTP / inspectable evidence</span></footer>
+</main></body></html>
