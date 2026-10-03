@@ -1,7 +1,6 @@
 import contextlib
 import io
 import json
-import os
 import stat
 import tempfile
 import unittest
@@ -63,6 +62,12 @@ class CliAndReportTests(unittest.TestCase):
             link.symlink_to(destination, target_is_directory=True)
             with self.assertRaisesRegex(ValueError, "symlink"):
                 write_report(link, {"results": [], "traces": [], "synthetic": True, "model": "x"})
+            self.assertEqual(list(destination.iterdir()), [])
+
+            parent_link = Path(folder) / "parent-link"
+            parent_link.symlink_to(destination, target_is_directory=True)
+            with self.assertRaisesRegex(ValueError, "symlink"):
+                write_report(parent_link / "report", {"results": [], "traces": [], "synthetic": True, "model": "x"})
             self.assertEqual(list(destination.iterdir()), [])
 
     def test_recursive_sanitizer_removes_known_key_and_credential_fields(self):
