@@ -1,6 +1,6 @@
 <h1 align="center">
   <img src="assets/logo.svg" width="72" alt=""><br>
-  toolcall-check
+  ToolCallCheck
 </h1>
 
 <p align="center">
@@ -8,9 +8,9 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Arthur031221/toolcall-check/stargazers"><img src="https://img.shields.io/github/stars/Arthur031221/toolcall-check?style=social" alt="GitHub stars"></a>
-  <a href="https://github.com/Arthur031221/toolcall-check/actions"><img src="https://github.com/Arthur031221/toolcall-check/actions/workflows/tests.yml/badge.svg" alt="Tests"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/Arthur031221/toolcall-check" alt="MIT license"></a>
+  <a href="https://github.com/Arthur031221/ToolCallCheck/stargazers"><img src="https://img.shields.io/github/stars/Arthur031221/ToolCallCheck?style=social" alt="GitHub stars"></a>
+  <a href="https://github.com/Arthur031221/ToolCallCheck/actions"><img src="https://github.com/Arthur031221/ToolCallCheck/actions/workflows/tests.yml/badge.svg" alt="Tests"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/Arthur031221/ToolCallCheck" alt="MIT license"></a>
 </p>
 
 <p align="center">
@@ -23,14 +23,14 @@
 > [!TIP]
 > Try the local synthetic fixture without configuring an endpoint:
 > ```sh
-> uvx --from git+https://github.com/Arthur031221/toolcall-check toolcall-check --demo
+> uvx --from git+https://github.com/Arthur031221/ToolCallCheck ToolCallCheck --demo
 > ```
 
 <p align="center">
   <img src="assets/demo.gif" alt="The real CLI checks a synthetic local endpoint, showing two nested argument failures followed by five passing checks." width="100%">
 </p>
 
-## Why toolcall-check
+## Why ToolCallCheck
 
 A successful HTTP response does not show whether nested arguments kept their JSON types, whether a streamed call survived fragment boundaries, or whether the assistant can use a tool result on its next turn. When one of those steps goes wrong, the response body alone can be difficult to inspect.
 
@@ -50,14 +50,14 @@ This command sends five small probes and saves a private HTML report with saniti
 The hero command requires [uv](https://docs.astral.sh/uv/getting-started/installation/). For a persistent command, install from GitHub:
 
 ```sh
-uv tool install git+https://github.com/Arthur031221/toolcall-check
+uv tool install git+https://github.com/Arthur031221/ToolCallCheck
 ```
 
 Try the synthetic fixture in one command:
 
 ```sh
 uvx \
-  --from git+https://github.com/Arthur031221/toolcall-check \
+  --from git+https://github.com/Arthur031221/ToolCallCheck \
   toolcall-check \
   --demo \
   --output fixture-report
@@ -102,7 +102,7 @@ Each single-call probe runs in a disposable Python process. The round-trip probe
 | Tool | What it checks | How this project is scoped |
 | --- | --- | --- |
 | [CompatCanary](https://github.com/CognizenOrg/compatcanary) | A broader chat API compatibility scan that documents forced calls, streaming, and structured output. | This project concentrates on nested argument integrity, reconstructing streamed tool fragments, a fixed second-turn result, and inspectable traces. |
-| toolcall-check | Five forced, streaming, and round-trip probes with exact argument comparison. | The report keeps one result and trace for each named check. |
+| ToolCallCheck | Five forced, streaming, and round-trip probes with exact argument comparison. | The report keeps one result and trace for each named check. |
 
 <details>
 <summary><b>View a generated HTML report</b></summary>
@@ -148,7 +148,7 @@ The workflow runs the standard-library test suite on Python 3.10 through 3.14. I
 
 ## Contributing
 
-[Report a problem](https://github.com/Arthur031221/toolcall-check/issues) or send a focused pull request. See [CONTRIBUTING.md](CONTRIBUTING.md) for the test command and report-sharing guidance.
+[Report a problem](https://github.com/Arthur031221/ToolCallCheck/issues) or send a focused pull request. See [CONTRIBUTING.md](CONTRIBUTING.md) for the test command and report-sharing guidance.
 
 ## License
 
