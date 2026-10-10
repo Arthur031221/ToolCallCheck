@@ -153,3 +153,5 @@ The workflow runs the standard-library test suite on Python 3.10 through 3.14. I
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
+Assisted by Claude/Codex.
